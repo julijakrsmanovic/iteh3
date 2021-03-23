@@ -30,6 +30,9 @@ export default function Home() {
                     <label >Prikazi</label>
                     <select value={brojPrikazani} onChange={(e) => {
                         const value = parseInt(e.target.value);
+                        if (pocetniIndex + value >= podaci.length) {
+                            setPocetniIndex(podaci.length - value);
+                        }
                         setBrojPrikazani(value);
                     }} className='form-control'>
                         <option value="2">2</option>
